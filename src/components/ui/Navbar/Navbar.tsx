@@ -134,12 +134,48 @@ const Navbar = () => {
                                         </motion.div>
                                     )}
                                 </div>
-                                <a
-                                    href="#"
-                                    className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
+                                <div
+                                    className="relative"
+                                    onMouseEnter={() => handleMouseEnter('menu4')}
+                                    onMouseLeave={() => handleMouseLeave('menu4')}
                                 >
-                                    Institucional
-                                </a>
+                                    <button
+                                        className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium flex items-center"
+                                        onMouseEnter={() => handleMouseEnter('menu4')}
+                                    >
+                                        Institucional
+                                        <FaChevronDown className="ml-1" />
+                                    </button>
+                                    {openSubMenu['menu4'] && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -10 }}
+                                            className="absolute z-10 mt-2 w-48 bg-white shadow-lg"
+                                            onMouseEnter={() => handleMouseEnter('menu4')}
+                                            onMouseLeave={() => handleMouseLeave('menu4')}
+                                        >
+                                            <a
+                                                href="/institucional/alcalde"
+                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                                Alcalde
+                                            </a>
+                                            <a
+                                                href="/institucional/organigrama"
+                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                                Organigrama 
+                                            </a>
+                                            <a
+                                                href="/institucional/concejo-municipal"
+                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                                Concejo Municipal
+                                            </a>
+                                        </motion.div>
+                                    )}
+                                </div>
                                 <a
                                     href="#"
                                     className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
