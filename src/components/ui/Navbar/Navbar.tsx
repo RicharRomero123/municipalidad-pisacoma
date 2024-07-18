@@ -264,19 +264,19 @@ const Navbar = () => {
                             {openSubMenu['menu1'] && (
                                 <div className="pl-4">
                                     <Link
-                                        href="#"
+                                        href="/distrito/historia"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Historia
                                     </Link>
                                     <Link
-                                        href="#"
+                                        href="/distrito/geografia"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Geografía
                                     </Link>
                                     <Link
-                                        href="#"
+                                        href="/distrito/turismo"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Turismo
@@ -284,12 +284,37 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
-                        <Link
-                            href="#"
-                            className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >
-                            Institucional
-                        </Link>
+                        <div className="relative">
+                            <button
+                                onClick={() => toggleSubMenu('menu4')}
+                                className="w-full flex justify-between items-center text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
+                            >
+                                Institucional
+                                <FaPlus />
+                            </button>
+                            {openSubMenu['menu4'] && (
+                                <div className="pl-4">
+                                    <Link
+                                        href="/institucional/alcalde"
+                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                    >
+                                        Alcalde
+                                    </Link>
+                                    <Link
+                                        href="/institucional/organigrama"
+                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                    >
+                                        Organigrama
+                                    </Link>
+                                    <Link
+                                        href="/institucional/concejo-municipal"
+                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                    >
+                                        Concejo Municipal
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
                         <Link
                             href="#"
                             className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
