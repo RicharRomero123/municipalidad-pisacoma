@@ -9,7 +9,7 @@ const TopBar = () => {
     };
 
     return (
-        <div className="bg-green-600 text-white py-2">
+        <div className="bg-red-800 text-white py-2">
             <div className="hidden sm:flex justify-between items-center px-6 max-w-5xl mx-auto">
                 <div className="flex-1 text-left text-xs font-bold">
                     {`Pisacoma, ${getCurrentDate()}`}
@@ -21,24 +21,24 @@ const TopBar = () => {
                     </Link>
                 </div>
                 <div className="flex-1 text-right flex justify-end space-x-4">
-                    <a href="https://wa.me/your-whatsapp-number" className="text-white text-2xl">
+                    <Link href="https://wa.me/your-whatsapp-number" className="text-white text-2xl">
                         <FaWhatsapp />
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61555683550086&ref=embed_page" className="text-white text-2xl">
+                    </Link>
+                    <Link href="https://www.facebook.com/profile.php?id=61555683550086&ref=embed_page" className="text-white text-2xl">
                         <FaFacebook />
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="flex sm:hidden justify-between items-center px-6">
-                <a href="mailto:mesadepartesvirtual@munipisacoma.gob.pe" className="text-white text-3xl">
+                <Link href="mailto:mesadepartesvirtual@munipisacoma.gob.pe" className="text-white text-3xl">
                     <FaEnvelope />
-                </a>
-                <a href="https://wa.me/your-whatsapp-number" className="text-white text-3xl">
+                </Link>
+                <Link href="https://wa.me/your-whatsapp-number" className="text-white text-3xl">
                     <FaWhatsapp />
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61555683550086&ref=embed_page" className="text-white text-3xl">
+                </Link>
+                <Link href="https://www.facebook.com/profile.php?id=61555683550086&ref=embed_page" className="text-white text-3xl">
                     <FaFacebook />
-                </a>
+                </Link>
             </div>
         </div>
     );

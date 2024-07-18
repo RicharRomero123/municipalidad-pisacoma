@@ -39,11 +39,18 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-24">
                     <div className="flex items-center justify-between w-full lg:hidden">
-                        <img
-                            className="h-12 w-auto sm:h-14 md:h-16"
-                            src="/pisacoma.webp"
-                            alt="Logo Pisacoma"
-                        />
+                    <div className="flex-shrink-0">
+    <Link href="/">
+        
+            <motion.img
+                whileHover={{ x: 10 }}
+                className="h-20 w-auto"
+                src="/pisacoma.webp"
+                alt="Logo"
+            />
+        
+    </Link>
+</div>
                         <button
                             onClick={toggleMenu}
                             className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -89,6 +96,7 @@ const Navbar = () => {
             />
         
     </Link>
+   
 </div>
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4 items-center">
