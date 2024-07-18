@@ -78,14 +78,18 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="hidden lg:flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                        <div className="flex-shrink-0">
-                            <motion.img
-                                whileHover={{ x: 10 }}
-                                className="h-20 w-auto"
-                                src="/pisacoma.webp"
-                                alt="Logo"
-                            />
-                        </div>
+                    <div className="flex-shrink-0">
+    <Link href="/">
+        
+            <motion.img
+                whileHover={{ x: 10 }}
+                className="h-20 w-auto"
+                src="/pisacoma.webp"
+                alt="Logo"
+            />
+        
+    </Link>
+</div>
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4 items-center">
                                 <div
@@ -110,19 +114,19 @@ const Navbar = () => {
                                             onMouseLeave={() => handleMouseLeave('menu1')}
                                         >
                                             <a
-                                                href="#"
+                                                href="/distrito/historia"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Historia
                                             </a>
                                             <a
-                                                href="#"
+                                                href="/distrito/geografia"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Geografía
                                             </a>
                                             <a
-                                                href="#"
+                                                href="/distrito/turismo"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Turismo

@@ -2,10 +2,10 @@ import React from 'react';
 
 const Geografia = () => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-6 ">
+        <div className="bg-white shadow-md rounded-lg p-6">
             <h1 className="text-green-700 font-bold text-2xl mb-4">Geografía de Pisacoma</h1>
             <p className="text-gray-700 leading-relaxed mb-4">
-                Pisacoma es llamada también "La Tierra de Pinturas Rupestres". Se ubica al sur de la región de Puno, cerca a la frontera de la república de Bolivia. Políticamente está dividido en tres comunidades, 13 parcialidades, 3 sectores y un centro poblado. La capital del distrito se halla a 4080 m.s.n.m.
+                Pisacoma es llamada también &quot;La Tierra de Pinturas Rupestres&quot;. Se ubica al sur de la región de Puno, cerca a la frontera de la república de Bolivia. Políticamente está dividido en tres comunidades, 13 parcialidades, 3 sectores y un centro poblado. La capital del distrito se halla a 4080 m.s.n.m.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
                 El clima en el distrito de Pisacoma tiene un comportamiento muy irregular, con una temperatura máxima de 11.2°C, su humedad fluctúa alrededor de 44.9% (meses diciembre a marzo), y su temperatura mínima es de -8.7°C. Se caracteriza por tener recursos hídricos formados desde las cordilleras Huallatauqui y Santo Domingo de Llallagua. Entre los principales tenemos el Río Sura, Kakingurani, Quispine, y Collpajavira, afluentes del Río Chambalaya Arriba, que en los meses de sequía mantiene un caudal de aproximadamente 200 L/s.
