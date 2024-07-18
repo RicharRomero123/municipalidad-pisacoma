@@ -224,12 +224,12 @@ const Navbar = () => {
                                         </motion.div>
                                     )}
                                 </div>
-                                <a
+                                <Link
                                     href="#"
                                     className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
                                 >
                                     Notas de prensa
-                                </a>
+                                </Link>
                                 <Link href="https://www.gob.pe/munipisacoma">
                                     <motion.img
                                         whileHover={{ x: 10 }}
@@ -247,12 +247,12 @@ const Navbar = () => {
             {openMenu && (
                 <div className="lg:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1">
-                        <a
+                        <Link
                             href="#"
                             className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
                             Inicio
-                        </a>
+                        </Link>
                         <div className="relative">
                             <button
                                 onClick={() => toggleSubMenu('menu1')}
