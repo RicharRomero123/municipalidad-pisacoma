@@ -176,12 +176,7 @@ const Navbar = () => {
                                         </motion.div>
                                     )}
                                 </div>
-                                <Link
-                                    href="#"
-                                    className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
-                                >
-                                    Servicios
-                                </Link>
+                               
                                 <div
                                     className="relative"
                                     onMouseEnter={() => handleMouseEnter('menu2')}
@@ -315,12 +310,7 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
-                        <Link
-                            href="#"
-                            className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >
-                            Servicios
-                        </Link>
+                       
                         <div className="relative">
                             <button
                                 onClick={() => toggleSubMenu('menu2')}
