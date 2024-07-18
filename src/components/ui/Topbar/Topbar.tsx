@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
-
+import Link from "next/link";
 const TopBar = () => {
     const getCurrentDate = () => {
         const today = new Date();
@@ -16,15 +16,15 @@ const TopBar = () => {
                 </div>
                 <div className="flex-1 text-center text-xs font-bold flex items-center justify-center space-x-2">
                     <FaEnvelope className="text-lg" />
-                    <a href="mailto:mesadepartesvirtual@munipisacoma.gob.pe">
+                    <Link href="mailto:mesadepartesvirtual@munipisacoma.gob.pe">
                         mesadepartesvirtual@munipisacoma.gob.pe
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex-1 text-right flex justify-end space-x-4">
                     <a href="https://wa.me/your-whatsapp-number" className="text-white text-2xl">
                         <FaWhatsapp />
                     </a>
-                    <a href="https://www.facebook.com/your-facebook-page" className="text-white text-2xl">
+                    <a href="https://www.facebook.com/profile.php?id=61555683550086&ref=embed_page" className="text-white text-2xl">
                         <FaFacebook />
                     </a>
                 </div>
@@ -36,7 +36,7 @@ const TopBar = () => {
                 <a href="https://wa.me/your-whatsapp-number" className="text-white text-3xl">
                     <FaWhatsapp />
                 </a>
-                <a href="https://www.facebook.com/your-facebook-page" className="text-white text-3xl">
+                <a href="https://www.facebook.com/profile.php?id=61555683550086&ref=embed_page" className="text-white text-3xl">
                     <FaFacebook />
                 </a>
             </div>

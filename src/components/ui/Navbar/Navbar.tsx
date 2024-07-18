@@ -2,8 +2,8 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaChevronDown, FaPlus, FaTimes } from 'react-icons/fa';
-import Link from 'next/link';
 import TopBar from "@/components/ui/Topbar/Topbar";
+import Link from "next/link";
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -69,7 +69,7 @@ const Navbar = () => {
                                 </svg>
                             )}
                         </button>
-                        <Link href="http://example.com">
+                        <Link href="https://www.gob.pe/munipisacoma">
                             <img
                                 className="h-12 w-auto sm:h-12 md:h-14"
                                 src="/portaltransparencia.webp"
@@ -113,24 +113,24 @@ const Navbar = () => {
                                             onMouseEnter={() => handleMouseEnter('menu1')}
                                             onMouseLeave={() => handleMouseLeave('menu1')}
                                         >
-                                            <a
-                                                href="/distrito/historia"
+                                            <Link  href="/distrito/historia"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Historia
-                                            </a>
-                                            <a
+                                       >
+                                            Historia
+                                            </Link>
+                                            
+                                            <Link
                                                 href="/distrito/geografia"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Geografía
-                                            </a>
-                                            <a
+                                            </Link>
+                                            <Link
                                                 href="/distrito/turismo"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Turismo
-                                            </a>
+                                            </Link>
                                         </motion.div>
                                     )}
                                 </div>
@@ -155,33 +155,33 @@ const Navbar = () => {
                                             onMouseEnter={() => handleMouseEnter('menu4')}
                                             onMouseLeave={() => handleMouseLeave('menu4')}
                                         >
-                                            <a
+                                            <Link
                                                 href="/institucional/alcalde"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Alcalde
-                                            </a>
-                                            <a
+                                            </Link>
+                                            <Link
                                                 href="/institucional/organigrama"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Organigrama 
-                                            </a>
-                                            <a
+                                            </Link>
+                                            <Link
                                                 href="/institucional/concejo-municipal"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Concejo Municipal
-                                            </a>
+                                            </Link>
                                         </motion.div>
                                     )}
                                 </div>
-                                <a
+                                <Link
                                     href="#"
                                     className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
                                 >
                                     Servicios
-                                </a>
+                                </Link>
                                 <div
                                     className="relative"
                                     onMouseEnter={() => handleMouseEnter('menu2')}
@@ -203,24 +203,24 @@ const Navbar = () => {
                                             onMouseEnter={() => handleMouseEnter('menu2')}
                                             onMouseLeave={() => handleMouseLeave('menu2')}
                                         >
-                                            <a
+                                            <Link
                                                 href="#"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Normas Municipales
-                                            </a>
-                                            <a
+                                            </Link>
+                                            <Link
                                                 href="#"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Ordenanza Municipal
-                                            </a>
-                                            <a
+                                            </Link>
+                                            <Link
                                                 href="#"
                                                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                             >
                                                 Resoluciones de Concejo
-                                            </a>
+                                            </Link>
                                         </motion.div>
                                     )}
                                 </div>
@@ -230,7 +230,7 @@ const Navbar = () => {
                                 >
                                     Notas de prensa
                                 </a>
-                                <Link href="http://example.com">
+                                <Link href="https://www.gob.pe/munipisacoma">
                                     <motion.img
                                         whileHover={{ x: 10 }}
                                         className="h-16 w-auto"
@@ -263,39 +263,39 @@ const Navbar = () => {
                             </button>
                             {openSubMenu['menu1'] && (
                                 <div className="pl-4">
-                                    <a
+                                    <Link
                                         href="#"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Historia
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         href="#"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Geografía
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         href="#"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Turismo
-                                    </a>
+                                    </Link>
                                 </div>
                             )}
                         </div>
-                        <a
+                        <Link
                             href="#"
                             className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
                             Institucional
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="#"
                             className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
                             Servicios
-                        </a>
+                        </Link>
                         <div className="relative">
                             <button
                                 onClick={() => toggleSubMenu('menu2')}
@@ -306,33 +306,33 @@ const Navbar = () => {
                             </button>
                             {openSubMenu['menu2'] && (
                                 <div className="pl-4">
-                                    <a
+                                    <Link
                                         href="#"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Normas Municipales
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         href="#"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Ordenanza Municipal
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         href="#"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                                     >
                                         Resoluciones de Concejo
-                                    </a>
+                                    </Link>
                                 </div>
                             )}
                         </div>
-                        <a
+                        <Link
                             href="#"
                             className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                         >
                             Notas de prensa
-                        </a>
+                        </Link>
                     </div>
                 </div>
             )}
