@@ -8,7 +8,7 @@ export default function MunicipalidadLayout({
     children: React.ReactNode;
   }) {
     return (
-       <div className="mt-40 flex flex-col md:flex-row max-w-7xl mx-auto  px-4 space-y-4 md:space-y-0 md:space-x-4">
+       <div className="mt-4 flex flex-col md:flex-row max-w-7xl mx-auto  px-4 space-y-4 md:space-y-0 md:space-x-4">
                <div className="w-full md:w-3/4">
                     {children}
                 </div>

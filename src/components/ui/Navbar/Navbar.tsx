@@ -1,366 +1,179 @@
 "use client";
-import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { FaChevronDown, FaPlus, FaTimes } from 'react-icons/fa';
-import TopBar from "@/components/ui/Topbar/Topbar";
-import Link from "next/link";
+import React from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Button,
+  DropdownItem,
+  DropdownTrigger,
+  Dropdown,
+  DropdownMenu,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/react";
+import { Link } from "@nextui-org/link";
+import { ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale } from "@/components/ui/Navbar/Icons";
 
-const Navbar = () => {
-    const [openMenu, setOpenMenu] = useState(false);
-    const [openSubMenu, setOpenSubMenu] = useState<{ [key: string]: boolean }>({});
-    const timeoutRef = useRef<{ [key: string]: NodeJS.Timeout | null }>({});
+export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    const toggleMenu = () => setOpenMenu(!openMenu);
-    const toggleSubMenu = (menu: string, state?: boolean) => {
-        setOpenSubMenu(prevState => ({
-            ...prevState,
-            [menu]: state !== undefined ? state : !prevState[menu]
-        }));
-    };
+  const icons = {
+    chevron: <ChevronDown fill="currentColor" size={16} height={16} width={16} />,
+    scale: <Scale className="text-warning" fill="currentColor" size={30} height={30} width={30} />,
+    lock: <Lock className="text-success" fill="currentColor" size={30} height={30} width={30} />,
+    activity: <Activity className="text-secondary" fill="currentColor" size={30} height={30} width={30} />,
+    flash: <Flash className="text-primary" fill="currentColor" size={30} height={30} width={30} />,
+    server: <Server className="text-success" fill="currentColor" size={30} height={30} width={30} />,
+    user: <TagUser className="text-danger" fill="currentColor" size={30} height={30} width={30} />,
+  };
 
-    const handleMouseEnter = (menu: string) => {
-        if (timeoutRef.current[menu]) {
-            clearTimeout(timeoutRef.current[menu]!);
-            timeoutRef.current[menu] = null;
-        }
-        toggleSubMenu(menu, true);
-    };
+  const menuItems = [
+    { name: "Inicio", link: "/" },
+    { 
+      name: "Nuestro Distrito", 
+      submenu: [
+        { name: "Historia", link: "/distrito/historia", icon: icons.scale, description: "Conoce la historia de nuestro distrito" },
+        { name: "Geografía", link: "/distrito/geografia", icon: icons.activity, description: "Descubre la geografía de nuestro distrito" },
+        { name: "Turismo", link: "/distrito/turismo", icon: icons.flash, description: "Explora el turismo en nuestro distrito" }
+      ] 
+    },
+    { 
+      name: "Institucional", 
+      submenu: [
+        { name: "Alcalde", link: "/institucional/alcalde", icon: icons.user, description: "Conoce a nuestro alcalde" },
+        { name: "Organigrama Estructural", link: "/institucional/organigrama", icon: icons.server, description: "Estructura del organigrama" },
+        { name: "Concejo Municipal", link: "/institucional/concejo-municipal", icon: icons.lock, description: "Miembros del Concejo Municipal" }
+      ] 
+    },
+    { 
+      name: "Transparencia", 
+      submenu: [
+        { name: "Ordenanza Municipal", link: "/transparencia/ordenanza-municipal", icon: icons.scale, description: "Conoce nuestras ordenanzas municipales" },
+        { name: "Resolución de Concejo", link: "/transparencia/resolucion-concejo", icon: icons.activity, description: "Resoluciones del Concejo" }
+      ] 
+    },
+    { name: "Notas de prensa", link: "#" }
+  ];
 
-    const handleMouseLeave = (menu: string) => {
-        timeoutRef.current[menu] = setTimeout(() => {
-            toggleSubMenu(menu, false);
-        }, 300);
-    };
+  return (
+    <Navbar onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
+          <div className="flex items-center">
+            <img src="/Huacullani.png" alt="Huacullani" className="ml-2 h-8 w-auto" />
+          </div>
+        </NavbarBrand>
+      </NavbarContent>
 
-    return (
-        <nav className="bg-white shadow-md fixed w-full top-0 z-50">
-                  <TopBar/>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="relative flex items-center justify-between h-24">
-                    <div className="flex items-center justify-between w-full lg:hidden">
-                    <div className="flex-shrink-0">
-    <Link href="/">
-        
-            <motion.img
-                whileHover={{ x: 10 }}
-                className="h-20 w-auto"
-                src="/pisacoma.webp"
-                alt="Logo"
-            />
-        
-    </Link>
-</div>
-                        <button
-                            onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            {openMenu ? (
-                                <FaTimes className="block h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" aria-hidden="true" />
-                            ) : (
-                                <svg
-                                    className="block h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16m-7 6h7"
-                                    />
-                                </svg>
-                            )}
-                        </button>
-                        <Link href="https://www.gob.pe/munipisacoma">
-                            <img
-                                className="h-12 w-auto sm:h-12 md:h-14"
-                                src="/portaltransparencia.webp"
-                                alt="Portal de Transparencia"
-                            />
-                        </Link>
-                    </div>
-                    <div className="hidden lg:flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                    <div className="flex-shrink-0">
-    <Link href="/">
-        
-            <motion.img
-                whileHover={{ x: 10 }}
-                className="h-20 w-auto"
-                src="/pisacoma.webp"
-                alt="Logo"
-            />
-        
-    </Link>
-   
-</div>
-                        <div className="hidden sm:block sm:ml-6">
-                            <div className="flex space-x-4 items-center">
-                                <div
-                                    className="relative"
-                                    onMouseEnter={() => handleMouseEnter('menu1')}
-                                    onMouseLeave={() => handleMouseLeave('menu1')}
-                                >
-                                    <button
-                                        className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium flex items-center"
-                                        onMouseEnter={() => handleMouseEnter('menu1')}
-                                    >
-                                        Nuestro Distrito
-                                        <FaChevronDown className="ml-1" />
-                                    </button>
-                                    {openSubMenu['menu1'] && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            className="absolute z-10 mt-2 w-48 bg-white shadow-lg"
-                                            onMouseEnter={() => handleMouseEnter('menu1')}
-                                            onMouseLeave={() => handleMouseLeave('menu1')}
-                                        >
-                                            <Link  href="/distrito/historia"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                       >
-                                            Historia
-                                            </Link>
-                                            
-                                            <Link
-                                                href="/distrito/geografia"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Geografía
-                                            </Link>
-                                            <Link
-                                                href="/distrito/turismo"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Turismo
-                                            </Link>
-                                        </motion.div>
-                                    )}
-                                </div>
-                                <div
-                                    className="relative"
-                                    onMouseEnter={() => handleMouseEnter('menu4')}
-                                    onMouseLeave={() => handleMouseLeave('menu4')}
-                                >
-                                    <button
-                                        className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium flex items-center"
-                                        onMouseEnter={() => handleMouseEnter('menu4')}
-                                    >
-                                        Institucional
-                                        <FaChevronDown className="ml-1" />
-                                    </button>
-                                    {openSubMenu['menu4'] && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            className="absolute z-10 mt-2 w-48 bg-white shadow-lg"
-                                            onMouseEnter={() => handleMouseEnter('menu4')}
-                                            onMouseLeave={() => handleMouseLeave('menu4')}
-                                        >
-                                            <Link
-                                                href="/institucional/alcalde"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Alcalde
-                                            </Link>
-                                            <Link
-                                                href="/institucional/organigrama"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Organigrama 
-                                            </Link>
-                                            <Link
-                                                href="/institucional/concejo-municipal"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Concejo Municipal
-                                            </Link>
-                                        </motion.div>
-                                    )}
-                                </div>
-                               
-                                <div
-                                    className="relative"
-                                    onMouseEnter={() => handleMouseEnter('menu2')}
-                                    onMouseLeave={() => handleMouseLeave('menu2')}
-                                >
-                                    <button
-                                        className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium flex items-center"
-                                        onMouseEnter={() => handleMouseEnter('menu2')}
-                                    >
-                                        Transparencia
-                                        <FaChevronDown className="ml-1" />
-                                    </button>
-                                    {openSubMenu['menu2'] && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            className="absolute z-10 mt-2 w-48 bg-white shadow-lg"
-                                            onMouseEnter={() => handleMouseEnter('menu2')}
-                                            onMouseLeave={() => handleMouseLeave('menu2')}
-                                        >
-                                            <Link
-                                                href="#"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Normas Municipales
-                                            </Link>
-                                            <Link
-                                                href="#"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Ordenanza Municipal
-                                            </Link>
-                                            <Link
-                                                href="#"
-                                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                            >
-                                                Resoluciones de Concejo
-                                            </Link>
-                                        </motion.div>
-                                    )}
-                                </div>
-                                <Link
-                                    href="#"
-                                    className="text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
-                                >
-                                    Notas de prensa
-                                </Link>
-                                <Link href="https://www.gob.pe/munipisacoma">
-                                    <motion.img
-                                        whileHover={{ x: 10 }}
-                                        className="h-16 w-auto"
-                                        src="/portaltransparencia.webp"
-                                        alt="Portal de Transparencia"
-                                    />
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {openMenu && (
-                <div className="lg:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1">
-                        <Link
-                            href="#"
-                            className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >
-                            Inicio
-                        </Link>
-                        <div className="relative">
-                            <button
-                                onClick={() => toggleSubMenu('menu1')}
-                                className="w-full flex justify-between items-center text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-                            >
-                                Nuestro Distrito
-                                <FaPlus />
-                            </button>
-                            {openSubMenu['menu1'] && (
-                                <div className="pl-4">
-                                    <Link
-                                        href="/distrito/historia"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Historia
-                                    </Link>
-                                    <Link
-                                        href="/distrito/geografia"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Geografía
-                                    </Link>
-                                    <Link
-                                        href="/distrito/turismo"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Turismo
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
-                        <div className="relative">
-                            <button
-                                onClick={() => toggleSubMenu('menu4')}
-                                className="w-full flex justify-between items-center text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-                            >
-                                Institucional
-                                <FaPlus />
-                            </button>
-                            {openSubMenu['menu4'] && (
-                                <div className="pl-4">
-                                    <Link
-                                        href="/institucional/alcalde"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Alcalde
-                                    </Link>
-                                    <Link
-                                        href="/institucional/organigrama"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Organigrama
-                                    </Link>
-                                    <Link
-                                        href="/institucional/concejo-municipal"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Concejo Municipal
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
-                       
-                        <div className="relative">
-                            <button
-                                onClick={() => toggleSubMenu('menu2')}
-                                className="w-full flex justify-between items-center text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-                            >
-                                Transparencia
-                                <FaPlus />
-                            </button>
-                            {openSubMenu['menu2'] && (
-                                <div className="pl-4">
-                                    <Link
-                                        href="#"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Normas Municipales
-                                    </Link>
-                                    <Link
-                                        href="#"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Ordenanza Municipal
-                                    </Link>
-                                    <Link
-                                        href="#"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                    >
-                                        Resoluciones de Concejo
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
-                        <Link
-                            href="#"
-                            className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >
-                            Notas de prensa
-                        </Link>
-                    </div>
-                </div>
-            )}
-        </nav>
-    );
-};
-
-export default Navbar;
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        {menuItems.map((item, index) =>
+          item.submenu ? (
+            <Dropdown key={index}>
+              <NavbarItem>
+                <DropdownTrigger>
+                  <Button
+                    disableRipple
+                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                    endContent={icons.chevron}
+                    radius="sm"
+                    variant="light"
+                  >
+                    {item.name}
+                  </Button>
+                </DropdownTrigger>
+              </NavbarItem>
+              <DropdownMenu
+                aria-label={`${item.name} submenu`}
+                className="w-[340px]"
+                itemClasses={{
+                  base: "gap-4",
+                }}
+              >
+                {item.submenu.map((subitem, subindex) => (
+                  <DropdownItem 
+                    key={subindex} 
+                    startContent={subitem.icon} 
+                    description={subitem.description}
+                    as={Link} 
+                    href={subitem.link}
+                  >
+                    {subitem.name}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+          ) : (
+            <NavbarItem key={index} isActive={item.name === "Inicio"}>
+              <Link href={item.link} color="foreground">
+                {item.name}
+              </Link>
+            </NavbarItem>
+          )
+        )}
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarMenu>
+        {menuItems.map((item, index) =>
+          item.submenu ? (
+            <Dropdown key={index}>
+              <NavbarMenuItem>
+                <DropdownTrigger>
+                  <Button
+                    disableRipple
+                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                    endContent={icons.chevron}
+                    radius="sm"
+                    variant="light"
+                  >
+                    {item.name}
+                  </Button>
+                </DropdownTrigger>
+              </NavbarMenuItem>
+              <DropdownMenu
+                aria-label={`${item.name} submenu`}
+                className="w-[340px]"
+                itemClasses={{
+                  base: "gap-4",
+                }}
+              >
+                {item.submenu.map((subitem, subindex) => (
+                  <DropdownItem 
+                    key={subindex} 
+                    startContent={subitem.icon} 
+                    description={subitem.description}
+                    as={Link} 
+                    href={subitem.link}
+                  >
+                    {subitem.name}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+          ) : (
+            <NavbarMenuItem key={index}>
+              <Link href={item.link} className="w-full" size="lg">
+                {item.name}
+              </Link>
+            </NavbarMenuItem>
+          )
+        )}
+      </NavbarMenu>
+    </Navbar>
+  );
+}
