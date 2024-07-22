@@ -2,9 +2,10 @@
 import React from 'react';
 import ServiceButton from '@/components/Buttons/ServiceButton/ServiceButton';
 import { FaLaptopCode, FaIdCard, FaRegAddressCard, FaCheck, FaFileAlt, FaHammer, FaBook, FaUsers } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
 interface Service {
-    icon: React.ElementType;
+    icon: IconType;
     title: string;
     description?: string;
 }
@@ -22,9 +23,14 @@ const services: Service[] = [
 
 const ServiceButtons: React.FC = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
             {services.map((service, index) => (
-                <ServiceButton key={index} icon={service.icon} title={service.title} description={service.description} />
+                <ServiceButton
+                    key={index}
+                    icon={service.icon}
+                    title={service.title}
+                    description={service.description}
+                />
             ))}
         </div>
     );

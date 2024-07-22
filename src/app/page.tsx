@@ -3,11 +3,9 @@ import ServiceButtons from "@/components/ContentSection/ServiceButtons/ServiceBu
 
 export default function Home() {
   return (
-    <section className=" w-full lg:flex min-h-screen">
-      <div className="w-full h-screen ">  {/* Clase para ocupar toda la pantalla */}
+    <section className=" w-full">
         <HeroSlider />
         <ServiceButtons/>
-      </div>
     </section>
   );
 }

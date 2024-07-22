@@ -8,10 +8,10 @@ const HeroSlider: React.FC = () => {
     <div className="relative w-full">
       <CCarousel controls indicators dark>
         <CCarouselItem>
-          <CImage className="d-block w-full h-[36rem] object-cover" src="/pisacomaSlider3.webp" alt="Diapositiva 1" />
+          <CImage className="d-block w-full h-[36rem] object-cover" src="/slide1.webp" alt="Diapositiva 1" />
           <CCarouselCaption className="flex flex-col items-center md:items-start text-center md:text-left">
             <h5 className="text-4xl font-bold uppercase text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
-            Ciudad de Pisacoma
+            Huacullani
             </h5>
             <p className="text-lg font-bold text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
             Explora la belleza y la riqueza cultural de la ciudad de Pisacoma.            </p>
@@ -21,13 +21,13 @@ const HeroSlider: React.FC = () => {
           </CCarouselCaption>
         </CCarouselItem>
         <CCarouselItem>
-          <CImage className="d-block w-full h-[36rem] object-cover" src="/pisacomaaniversario.webp" alt="Diapositiva 2" />
+          <CImage className="d-block w-full h-[36rem] object-cover" src="/slide2.webp" alt="Diapositiva 2" />
           <CCarouselCaption className="flex flex-col items-center md:items-start text-center md:text-left">
             <h5 className="text-4xl font-bold uppercase text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
-            Pisacoma Aniversario
+            Huacullani Aniversario
             </h5>
             <p className="text-lg font-bold text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
-            Pisacoma celebra su aniversario con diversas actividades culturales y festivas.
+            Huacullani celebra su aniversario con diversas actividades culturales y festivas.
             
             </p>
             <button className="mt-4 px-6 py-3 bg-orange-500 text-white rounded-full shadow-md hover:bg-orange-600">
@@ -36,13 +36,13 @@ const HeroSlider: React.FC = () => {
           </CCarouselCaption>
         </CCarouselItem>
         <CCarouselItem>
-          <CImage className="d-block w-full h-[36rem] object-cover" src="/pisacomaSlider2.webp" alt="Diapositiva 3" />
+          <CImage className="d-block w-full h-[36rem] object-cover" src="/slide3.webp" alt="Diapositiva 3" />
           <CCarouselCaption className="flex flex-col items-center md:items-start text-center md:text-left">
             <h5 className="text-4xl font-bold uppercase text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
               Patrimonio Cultural
             </h5>
             <p className="text-lg font-bold text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
-              Descubre el patrimonio cultural y los sitios históricos de Pisacoma.
+              Descubre el patrimonio cultural y los sitios históricos de Huacullani.
             </p>
             <button className="mt-4 px-6 py-3 bg-orange-500 text-white rounded-full shadow-md hover:bg-orange-600">
               Descubre más
