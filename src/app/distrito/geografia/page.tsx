@@ -3,7 +3,7 @@ import React from 'react';
 const Geografia = () => {
     return (
         <div className="bg-white shadow-md rounded-lg p-6 min-h-[90vh]">
-            <h1 className="text-green-700 font-bold text-2xl mb-4">Geografía de Pisacoma</h1>
+            <h1 className="text-green-700 font-bold text-2xl mb-4">Geografía de Huacullani</h1>
             <p className="text-gray-700 leading-relaxed mb-4">
                 Pisacoma es llamada también &quot;La Tierra de Pinturas Rupestres&quot;. Se ubica al sur de la región de Puno, cerca a la frontera de la república de Bolivia. Políticamente está dividido en tres comunidades, 13 parcialidades, 3 sectores y un centro poblado. La capital del distrito se halla a 4080 m.s.n.m.
             </p>
