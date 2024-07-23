@@ -16,6 +16,7 @@ import {
 } from "@nextui-org/react";
 import { Link } from "@nextui-org/link";
 import { ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale } from "@/components/ui/Navbar/Icons";
+import ModalComponent from "@/components/Buttons/ModalLogin/ModalComponent"; // Importa tu componente de modal
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -119,13 +120,8 @@ export default function App() {
         )}
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
+          <ModalComponent />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
@@ -157,7 +153,7 @@ export default function App() {
                     key={subindex} 
                     startContent={subitem.icon} 
                     description={subitem.description}
-                    as={Link} 
+                    as={Link}      
                     href={subitem.link}
                   >
                     {subitem.name}

@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/portaltrasparencia.webp" alt="Portal de Transparencia" style={{ height: '50px', marginLeft: '1rem' }} />
+          <img src="/portaltransparencia.webp" alt="Portal de Transparencia" style={{ height: '50px', marginLeft: '1rem' }} />
           <Spacer x={1} />
           <Link href="https://www.facebook.com/MunicipalidadDistritalHuacullani" target="_blank" rel="noopener noreferrer">
             <FaFacebookF style={{ height: '30px', width: '30px', marginLeft: '1rem', color: '#4267B2' }} />
