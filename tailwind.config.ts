@@ -8,6 +8,9 @@ const {
  
 /** @type {import('tailwindcss').Config} */
 const config = {
+  images: {
+    domains: ['images.unsplash.com'],
+  },
   content: [
     "./src/**/*.{js,ts,jsx,tsx}", // Asegúrate de que esto apunte a tus archivos de proyecto
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"

@@ -3,7 +3,7 @@ import ServiceButtons from "@/components/ContentSection/ServiceButtons/ServiceBu
 
 export default function Home() {
   return (
-    <section className=" w-full">
+    <section className=" w-full  min-h-screen ">
         <HeroSlider />
         <ServiceButtons/>
     </section>

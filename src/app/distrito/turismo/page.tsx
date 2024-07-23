@@ -3,7 +3,7 @@ import React from 'react';
 
 const Turismo = () => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-6 ">
+        <div className="bg-white shadow-md rounded-lg p-6 min-h-[90vh]">
             <h1 className="text-green-700 font-bold text-2xl mb-4">Turismo de Kelluyo</h1>
             <p className="text-gray-700 leading-relaxed mb-4">
                 Ubicado en el distrito de Kelluyo región de Puno. Las chullpas de Chiarakue son muy similares a las chullpas de Sillustani y Cutimbo, construida de piedra por el acoplamiento geométrico. Hasta ahora no hay mucha información de estos lugares sin embargo representa lo más profundo de Puno y una oportunidad para los exploradores y el turismo cultural y arqueológico.

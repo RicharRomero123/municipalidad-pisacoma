@@ -2,7 +2,7 @@ import React from 'react';
 
 const ConcejoMunicipal = () => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-6">
+        <div className="bg-white shadow-md rounded-lg p-6 min-h-[90vh]">
             <h1 className="text-green-700 font-bold text-2xl mb-4">Concejo Municipal de Pisacoma</h1>
             <img 
                 src="/concejo-municpalidad.webp" 
@@ -12,5 +12,6 @@ const ConcejoMunicipal = () => {
         </div>
     );
 };
+
 
 export default ConcejoMunicipal;

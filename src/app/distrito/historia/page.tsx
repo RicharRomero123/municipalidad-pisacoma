@@ -2,31 +2,31 @@ import React from 'react';
 
 const Historia = () => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-6">
-            <h1 className="text-green-700 font-bold text-2xl mb-4">Historia de Pisacoma</h1>
-            <div className="flex flex-col lg:flex-row mb-4 items-center">
-                <p className="text-gray-700 leading-relaxed text-justify mb-4 lg:mr-4">
-                    <strong>Pisacoma</strong> es llamada también &quot;La Tierra de Pinturas Rupestres&quot;. Se ubica al sur de la región de Puno, cerca a la frontera de la república de Bolivia. Políticamente está dividido en tres comunidades, 13 parcialidades, 3 sectores y un centro poblado. La capital del distrito se halla a 4080 m.s.n.m. Los orígenes de Pisacoma se remontan a la palabra Aymara &quot;Pe&#39;sacca&quot; (ave andina llamada Perdiz) y la palabra &quot;Uma&quot; (Manantial de Agua), unidos estos dos vocablos significan &quot;P&#39;esaccauma&quot;, es decir, manantial de agua para las perdices. Con la imposición de la lengua Castellana y modificación lingüística se le conoce como Pisacoma.
-                </p>
-                <img src="/pisacomaciudad.webp" alt="Ciudad de Pisacoma" className="w-full lg:w-1/2 rounded-lg shadow-md mb-4" style={{ maxWidth: '600px', maxHeight: '450px' }} />
-            </div>
-            <div className="flex flex-col lg:flex-row items-center mb-4">
-                <p className="text-gray-700 leading-relaxed text-justify mb-4 lg:mr-4">
-                    El arte rupestre de Pisacoma se halla en un proceso de destrucción y desaparición por las inclemencias climatológicas afectadas por erosión. Algunos ya desaparecieron y otros son irreconocibles, difíciles de identificar. Pisacoma es identificado como patrimonio artístico de Arte Rupestre. Se caracteriza por la diversidad de colores en sus iconografías, única a nivel nacional, comparable solo a Toquepala. En su jurisdicción existen aproximadamente veintiocho sitios entre cuevas y aleros que albergan estas representaciones.
-                </p>
-                <img src="/pinturarupestre1.webp" alt="Pintura Rupestre 1" className="w-full lg:w-1/2 rounded-lg shadow-md mb-4" style={{ maxWidth: '600px', maxHeight: '450px' }} />
-            </div>
-            <div className="flex flex-col lg:flex-row items-center mb-4">
-                <img src="/pinturarupestre2.webp" alt="Pintura Rupestre 2" className="w-full lg:w-1/2 rounded-lg shadow-md mb-4 lg:mr-4" style={{ maxWidth: '600px', maxHeight: '450px' }} />
-                <p className="text-gray-700 leading-relaxed text-justify mb-4">
-                    El Arte Rupestre de Pisacoma constituye la mayor fuente de información sobre la historia del ser humano. Las investigaciones en antropología sobre el tema del Arte Rupestre en otros países occidentales han sobrepasado los cincuenta años. Sin embargo, una forma para estudiar el Arte Rupestre es en términos de su función cultural.
-                </p>
-            </div>
-            <div className="flex flex-col lg:flex-row items-center">
-                <p className="text-gray-700 leading-relaxed text-justify mb-4 lg:mr-4">
-                    El Arte Rupestre de Pisacoma constituye la mayor fuente de información sobre la historia del ser humano el mismo que debe ser comprendido dentro de tres coordenadas: <strong>tiempo</strong>, <strong>espacio</strong> y <strong>cultura</strong>. En sus iconografías evidencian mensajes y gráficos con un sentido de vida a nivel de costumbres, organización social y proceso de desarrollo, abarcando las ideas, creencias, necesidades de sobrevivir, ambiciones y temores. Forman parte de una cosmovisión compleja cuya vitalidad sigue presente ejecutándose dentro de sus creencias, visiones del mundo y campo metafísico espiritual y religioso.
-                </p>
-                <img src="/pinturarupestre3.webp" alt="Pintura Rupestre 3" className="w-full lg:w-1/2 rounded-lg shadow-md mb-4" style={{ maxWidth: '600px', maxHeight: '450px' }} />
+        <div className="bg-white shadow-md rounded-lg p-6 min-h-[90vh] ">
+            <h1 className="text-green-700 font-bold text-2xl mb-4">Geografía de Pisacoma</h1>
+            <p className="text-gray-700 leading-relaxed mb-4">
+                Pisacoma es llamada también &quot;La Tierra de Pinturas Rupestres&quot;. Se ubica al sur de la región de Puno, cerca a la frontera de la república de Bolivia. Políticamente está dividido en tres comunidades, 13 parcialidades, 3 sectores y un centro poblado. La capital del distrito se halla a 4080 m.s.n.m.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+                El clima en el distrito de Pisacoma tiene un comportamiento muy irregular, con una temperatura máxima de 11.2&deg;C, su humedad fluctúa alrededor de 44.9% (meses diciembre a marzo), y su temperatura mínima es de -8.7&deg;C. Se caracteriza por tener recursos hídricos formados desde las cordilleras Huallatauqui y Santo Domingo de Llallagua. Entre los principales tenemos el Río Sura, Kakingurani, Quispine, y Collpajavira, afluentes del Río Chambalaya Arriba, que en los meses de sequía mantiene un caudal de aproximadamente 200 L/s.
+            </p>
+            <h2 className="text-2xl font-bold text-gray-700 mb-2">Límites</h2>
+            <ul className="text-gray-700 leading-relaxed mb-4 list-disc pl-6">
+                <li><strong>Por el Norte:</strong> Con el Distrito de Huacullani y Kelluyo.</li>
+                <li><strong>Por el Sur:</strong> Con el Distrito de Copaso.</li>
+                <li><strong>Por el Este:</strong> Con la Hermana República de Bolivia.</li>
+                <li><strong>Por el Oeste:</strong> Con el Distrito de Santa Rosa y Copaso.</li>
+            </ul>
+            <div className="mt-4">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14533.89154407558!2d-69.38472426339115!3d-16.90637571956525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915c743144f4a3bb%3A0xffc19dfd40710748!2sPizacoma!5e1!3m2!1ses-419!2spe!4v1720927503310!5m2!1ses-419!2spe"
+                    width="100%"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                />
             </div>
         </div>
     );
