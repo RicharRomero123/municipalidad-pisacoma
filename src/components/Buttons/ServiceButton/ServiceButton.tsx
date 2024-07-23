@@ -1,4 +1,3 @@
-// components/ServiceButton.tsx
 import React from 'react';
 import { Card, Button } from "@nextui-org/react";
 import { IconType } from 'react-icons';
@@ -17,9 +16,7 @@ const ServiceButton: React.FC<ServiceButtonProps> = ({ icon: Icon, title, descri
                 <Icon className="text-blue-500 text-4xl mb-2" />
                 <h4 className="font-bold text-lg mb-2">{title}</h4>
                 {description && <p className="text-gray-600 mb-4">{description}</p>}
-                <Button size="sm" isLoading={isLoading}>
-                    {isLoading ? 'Loading...' : 'Learn More'}
-                </Button>
+                
             </div>
         </Card>
     );

@@ -1,4 +1,3 @@
-// components/ServiceButtons.tsx
 import React from 'react';
 import ServiceButton from '@/components/Buttons/ServiceButton/ServiceButton';
 import { FaLaptopCode, FaIdCard, FaRegAddressCard, FaCheck, FaFileAlt, FaHammer, FaBook, FaUsers } from 'react-icons/fa';
