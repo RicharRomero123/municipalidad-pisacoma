@@ -17,6 +17,7 @@ import {
 import { Link } from "@nextui-org/link";
 import { ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale } from "@/components/ui/Navbar/Icons";
 import ModalComponent from "@/components/Buttons/ModalLogin/ModalComponent"; // Importa tu componente de modal
+import { FaEnvelope } from "react-icons/fa"; // Importa el icono de react-icons
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

@@ -1,18 +1,21 @@
 import React from "react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link} from "@nextui-org/react";
-import {MailIcon} from '@/components/Buttons/ModalLogin/MailIcon.jsx';
-import {LockIcon} from '@/components/Buttons/ModalLogin/LockIcon';
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link } from "@nextui-org/react";
+import { MailIcon } from './MailIcon.jsx';
+import { LockIcon } from './LockIcon.jsx';
+import { FaEnvelope } from "react-icons/fa"; // Importa el icono de react-icons
 
-export default function App() {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+export default function ModalComponent() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
-      <Button onPress={onOpen} color="primary">Open Modal</Button>
+      <Button onPress={onOpen} color="primary" variant="flat" startContent={<FaEnvelope />}>
+        Mesa de Partes
+      </Button>
       <Modal 
         isOpen={isOpen} 
         onOpenChange={onOpenChange}
-        placement="top-center"
+        placement="center"
       >
         <ModalContent>
           {(onClose) => (
