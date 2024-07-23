@@ -20,23 +20,23 @@ export default function ModalComponent() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Log in</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">Iniciar Sesión - Mesa de Partes</ModalHeader>
               <ModalBody>
                 <Input
                   autoFocus
                   endContent={
                     <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                   }
-                  label="Email"
-                  placeholder="Enter your email"
+                  label="Correo Electrónico"
+                  placeholder="Ingresa tu correo electrónico"
                   variant="bordered"
                 />
                 <Input
                   endContent={
                     <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                   }
-                  label="Password"
-                  placeholder="Enter your password"
+                  label="Contraseña"
+                  placeholder="Ingresa tu contraseña"
                   type="password"
                   variant="bordered"
                 />
@@ -46,19 +46,19 @@ export default function ModalComponent() {
                       label: "text-small",
                     }}
                   >
-                    Remember me
+                    Recuérdame
                   </Checkbox>
                   <Link color="primary" href="#" size="sm">
-                    Forgot password?
+                    ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="flat" onPress={onClose}>
-                  Close
+                  Cerrar
                 </Button>
                 <Button color="primary" onPress={onClose}>
-                  Sign in
+                  Iniciar Sesión
                 </Button>
               </ModalFooter>
             </>
