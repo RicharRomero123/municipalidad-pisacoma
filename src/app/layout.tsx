@@ -7,8 +7,8 @@ import Footer from "@/components/ContentSection/Footer/FooterItem";
 
 
 export const metadata: Metadata = {
-  title: "Municipalidad de Pisacoma",
-  description: "Sitio oficial de la Municipalidad de Pisacoma",
+  title: "Municipalidad de Huacullani",
+  description: "Sitio oficial de la Municipalidad de Huacullani",
 };
 
 export default function RootLayout({
